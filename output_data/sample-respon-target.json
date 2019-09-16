@@ -1,0 +1,294 @@
+// https://myfave.com/api/v1/search/partners?city=bandung&page=1
+
+{
+  "outlets": [{
+      "address": "Apartment Sudirman Park Lobby Utama",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/764142cae9a063af030f74156a7d3c7308a24b5c/store/fit/800/1000/3506ef6bd86df770eaa00011317c2c13209840e702664d4adb2b13f495d6/logo.jpg",
+        "name": "Shade Aesthetic Clinic",
+        "outlets_count": 2
+      },
+      "company_slug": "shade-aesthetic-clinic",
+      "id": 20093,
+      "name": "Shade Aesthetic Clinic",
+      "offers_count": 0
+    },
+    {
+      "address": "Jalan Subak Sari, Gg. Waru No. 5, Canggu, Kuta Utara, Tibubeneng, Kuta Utara, Kabupaten Badung, Bali 80361",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/53db7d829b9e75f5266be52762197bea6b37f689/store/fit/800/1000/fbf14953ae83885359c11623133bf827cbf702625e65c3ab8430dda32df6/logo.jpg",
+        "name": "Villa Del Mar Canggu",
+        "outlets_count": 2
+      },
+      "company_slug": "villa-del-mar-canggu",
+      "id": 22561,
+      "name": "Villa Del Mar Canggu by Kanaya Hospitality",
+      "offers_count": 0
+    },
+    {
+      "address": "Jl. Raya Kuta No.46a, Kuta, Kabupaten Badung, Bali 80361, Indonesia",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/7f86e75116160e91032a474ece79eba658ac9570/store/fit/800/1000/764d7c1820fbcc8a542c2b31f278a39835b6dd4f88faeca0f42e9133d1c3/logo.jpg",
+        "name": "Puri Handayani Spa by The Banjar Bali",
+        "outlets_count": 2
+      },
+      "company_slug": "puri-handayani-spa-by-the-banjar-bali",
+      "id": 22583,
+      "name": "Raya-Kuta",
+      "offers_count": 0
+    },
+    {
+      "address": "Jl. Raya Kuta No.46a, Kuta, Kabupaten Badung, Bali 80361, Indonesia",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/242b132b62fa985a1aa7dc187046c1d2b2bc553b/store/fit/800/1000/f25e8e6ff24edbedba755278f35e4f0652b96464ab09b4543902ab567e88/logo.jpg",
+        "name": "Abians Resto by The Banjar Bali",
+        "outlets_count": 2
+      },
+      "company_slug": "abians-resto-by-the-banjar-bali",
+      "id": 22571,
+      "name": "Raya-Kuta",
+      "offers_count": 0
+    },
+    {
+      "address": "Jl. Raya Cipanas No.219, Sindanglaya, Cipanas, Kabupaten Cianjur, Jawa Barat 43253",
+      "company": {
+        "logo_url": null,
+        "name": "Zuri Resort & Convention Cipanas",
+        "outlets_count": 2
+      },
+      "company_slug": "zuri-resort-convention-cipanas",
+      "id": 21699,
+      "name": "Zuri Resort & Convention Cipanas",
+      "offers_count": 0
+    },
+    {
+      "address": "Mal Metropolitan, Lantai 3 Jl. A. Yani Pekayon Jaya No. 37, Kali Malang, Bekasi 17148",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 281
+      },
+      "company_slug": "aw",
+      "id": 13074,
+      "name": "Mal Metropolitan",
+      "offers_count": 0
+    },
+    {
+      "address": "Kota Harapan Indah Komplek Kavling Kuliner No27 Jl Harapan Indah Jaya, Medan Satria",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 281
+      },
+      "company_slug": "aw",
+      "id": 13072,
+      "name": "Kota Harapan Indah",
+      "offers_count": 0
+    },
+    {
+      "address": "Giant Pamulang Square, Lantai Dasar Blok A-01 No.1",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 281
+      },
+      "company_slug": "aw",
+      "id": 13065,
+      "name": "Giant Pamulang Square",
+      "offers_count": 0
+    },
+    {
+      "address": "Perhimpunan Marga Huang, Lantai Dasar Jl. Mangga Besar No138 RT 002/001",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 281
+      },
+      "company_slug": "aw",
+      "id": 13041,
+      "name": "Marga Huang",
+      "offers_count": 0
+    },
+    {
+      "address": "Jl. Ngagel No.137, Ngagel, Wonokromo, Kota SBY, Jawa Timur 60246",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 282
+      },
+      "company_slug": "aw",
+      "id": 17494,
+      "name": "Central Point",
+      "offers_count": 0
+    },
+    {
+      "address": "Jl. Chairil Anwar No.27-36, Margahayu, East Bekasi, Bekasi City, West Java 17113",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 282
+      },
+      "company_slug": "aw",
+      "id": 17464,
+      "name": " Blu Plaza Lt. Upper Ground",
+      "offers_count": 0
+    },
+    {
+      "address": "Pulo Gadung Trade Center, Jalan Raya Bekasi No.3, RW.3, Rw. Terate, Cakung, Kota Jakarta Timur, Jawa Timur 13920",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 282
+      },
+      "company_slug": "aw",
+      "id": 17458,
+      "name": "Pulo Gadung Trade Centre",
+      "offers_count": 0
+    },
+    {
+      "address": "Gandaria City, Lantai Lower Ground, Jl. Sultan Iskandar Muda, Gandaria, Jakarta",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a38d4a75fc60d9a38a8413fe92e041c3e1fd111b/store/fit/800/1000/49f9839cc726e4c7a821c1d53553614bc22b8e7e9fda886a5e5c282fb264/logo.jpg",
+        "name": "Cup Bop",
+        "outlets_count": 5
+      },
+      "company_slug": "cup-bop",
+      "id": 17430,
+      "name": "Gandaria City, Lt. LG",
+      "offers_count": 0
+    },
+    {
+      "address": "Mal Galaxy Lt 3 No. 347 Jl. Dharmahusada Indah Timur No. 35-37",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 276
+      },
+      "company_slug": "aw",
+      "id": 13123,
+      "name": "Galaxy Mall",
+      "offers_count": 0
+    },
+    {
+      "address": "Eastcoast Center - Pakuwon City, Lantai Ground No. 03 Jl. Laguna Kejawan Mutiara No 17",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 276
+      },
+      "company_slug": "aw",
+      "id": 13116,
+      "name": "Eascoast Center",
+      "offers_count": 0
+    },
+    {
+      "address": "Tunjungan Plaza 1, Unit PE - UG 02-06 Jl.Basuki Rahmat 8 - 12",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 275
+      },
+      "company_slug": "aw",
+      "id": 13040,
+      "name": "Tunjungan Plaza",
+      "offers_count": 0
+    },
+    {
+      "address": "Pantai Indah Kapuk Ruko Elang Laut , Blok M3 No. 5 - 6, Jakarta Utara",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/35616161a46a1b480e79d9285c00d5a43a7b8817/store/fit/800/1000/0153df58bdadb5d4386c213c52d53b40ce165b0554dff3b495d38b4d08ad/logo.jpg",
+        "name": "Zeus MMA",
+        "outlets_count": 1
+      },
+      "company_slug": "zeus-mma-a6516b66-d4d7-40ee-ab19-0592d6904b17",
+      "id": 210,
+      "name": "Elang Laut",
+      "offers_count": 0
+    },
+    {
+      "address": "Ruko Cordoba, Blok E No. 5, Bukit Golf Mediterania Jl. Marina Indah Raya, Pantai Indah Kapuk Jakarta Utara",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/0e139c68cf4823bd5441bd4854bf5f0f5880d20c/store/fit/800/1000/59c12f0da2f2bf7af7d6271f0a9ef9490610ceaaeb262755ddcadb7f4c31/logo.jpg",
+        "name": "D&K Dessert Cafe",
+        "outlets_count": 1
+      },
+      "company_slug": "dk-dessert-cafe",
+      "id": 740,
+      "name": "Ruko Cordoba",
+      "offers_count": 0
+    },
+    {
+      "address": "Pasar Segar Cinere, Ruko Blok RA No. 1 & 2 Jl. Raya Cinere No. 145, Cinere, Depok",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 254
+      },
+      "company_slug": "aw",
+      "id": 13079,
+      "name": "Pasar Segar Cinere",
+      "offers_count": 0
+    },
+    {
+      "address": "Mal Cinere, Lantai 1 Unit NW.E Jl. Raya Cinere No. 1, Pangkalan Jati, Limo, Depok 16513",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 254
+      },
+      "company_slug": "aw",
+      "id": 13077,
+      "name": "Mal Cinere",
+      "offers_count": 0
+    },
+    {
+      "address": "Ruko cikarang central city blok F no 19,20 & 21 Jl.Raya cikarang cibarusah km 10 no.88 kp.kandang roda, rt 012/rw 006 kel ciantra kec cikarang selatan, Bekasi, JABAR",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 254
+      },
+      "company_slug": "aw",
+      "id": 13075,
+      "name": "Central Cikarang",
+      "offers_count": 0
+    },
+    {
+      "address": "Tamini Square, Lantai 2 Blok SB - 5 & Lower Ground Blok LS-2 , Jl. Taman Mini Raya No. 1, Jakarta Timur 13560",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 254
+      },
+      "company_slug": "aw",
+      "id": 13092,
+      "name": "Taman Mini",
+      "offers_count": 0
+    },
+    {
+      "address": "Emporium Pluit Mall, Lantai 4, Unit 15 Jl. Pluit Selatan Raya, Jakarta Utara 14440",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 254
+      },
+      "company_slug": "aw",
+      "id": 13089,
+      "name": "Emporium Pluit",
+      "offers_count": 0
+    },
+    {
+      "address": "Komp. Tomang Tol Raya Blok I No. 24 - 25, Jl. Kedoya Raya, Kedoya, Jakarta Barat 11520",
+      "company": {
+        "logo_url": "https://image-assets.access.myfave.gdn/attachments/a9c319d12ae70561703c02e5b3e605df41313e72/store/fit/800/1000/de8fc59e5171cf5a8e1470068ff5cb96005bba35a9ad932f54fbe5daff99/logo.jpg",
+        "name": "A&W",
+        "outlets_count": 254
+      },
+      "company_slug": "aw",
+      "id": 13087,
+      "name": "Kedoya",
+      "offers_count": 0
+    }
+  ],
+  "total": 16136
+}
