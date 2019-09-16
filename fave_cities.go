@@ -1,54 +1,76 @@
-// package main
-
-// import (
-// 	"encoding/json"
-// 	"fmt"
-// 	"io/ioutil"
-
-// 	algorithmia "github.com/algorithmiaio/algorithmia-go"
-// )
-
-// func main() {
-// 	var apiKey = "sim5vLefek/igv1k9D05HTes1f51"
-
-// 	// Create the Algorithmia client object
-// 	var client = algorithmia.NewClient(apiKey, "")
-// 	algo, _ := client.Algo("web/SiteMap/0.1.7")
-// 	resp, _ := algo.Pipe("http://myfave.com")
-// 	response := resp.(*algorithmia.AlgoResponse)
-// 	res, _ := json.Marshal(response)
-// 	ioutil.WriteFile("linksgo.json", res, 0644)
-// 	fmt.Println(response.Result)
-
-// 	// links := []string{"https://myfave.com/surabaya/eat?category_ids=2", "https://myfave.com/surabaya/eat?category_ids=20"}
-
-// 	// for _, l := range links {
-// 	// 	analgo, _ := client.Algo("web/AnalyzeURL/0.2.14")
-// 	// 	anresp, _ := analgo.Pipe(l)
-// 	// 	anresponse := anresp.(*algorithmia.AlgoResponse)
-// 	// 	fmt.Println(anresponse.Result)
-// 	ioutil.WriteFile("linksgo2.json", res, 0644)
-
-// }
-
 package main
 
 import (
-	"os"
-
-	"github.com/anaskhan96/soup"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"time"
 )
+
+type Outlets struct {
+	Name    string `json:"name"`
+	Address string `json:"address"`
+}
+
+type Merchants struct {
+	Merch []Outlets `json:"outlets"`
+	Total int       `json:"total"`
+}
 
 func main() {
 
+	// // create slice for cities
+	// var cities []string
+
+	// // Open Url with soup
+	// resp, err := soup.Get("https://myfave.com")
+	// if err != nil {
+	// 	os.Exit(1)
+	// }
+
+	// // Parse the content of website
+	// doc := soup.HTMLParse(resp)
+	// // search for selected attribute of html
+	// links := doc.Find("div", "class", "col-xs-7").FindAll("a")
+	// // save to list
+	// for _, link := range links {
+	// 	cities = append(cities, link.Text())
+	// }
+	// fmt.Println(len(cities))
+
 	var cities []string
-	resp, err := soup.Get("https://myfave.com")
+
+	url_api := "https://myfave.com/api/v1/search/partners?city=bandung"
+
+	spaceClient := http.Client{
+		Timeout: time.Second * 2, // Maximum of 2 secs
+	}
+
+	req, err := http.NewRequest(http.MethodGet, url_api, nil)
 	if err != nil {
-		os.Exit(1)
+		log.Fatal(err)
 	}
-	doc := soup.HTMLParse(resp)
-	links := doc.Find("div", "class", "col-xs-7").FindAll("a")
-	for _, link := range links {
-		cities = append(cities, link.Text())
+
+	req.Header.Set("User-Agent", "fave-testcoding")
+
+	res, getErr := spaceClient.Do(req)
+	if getErr != nil {
+		log.Fatal(getErr)
 	}
+
+	body, readErr := ioutil.ReadAll(res.Body)
+	if readErr != nil {
+		log.Fatal(readErr)
+	}
+
+	var mr Merchants
+	json.Unmarshal([]byte(body), &mr)
+
+	for _, m := range mr.Merch {
+		cities = append(cities, m.Name)
+	}
+	fmt.Println(cities)
+	// fmt.Println(mr.Total, len(mr.Merch), mr.Merch[0].Name)
 }
