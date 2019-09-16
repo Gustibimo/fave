@@ -34,7 +34,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/anaskhan96/soup"
@@ -52,5 +51,4 @@ func main() {
 	for _, link := range links {
 		cities = append(cities, link.Text())
 	}
-	fmt.Println(len(cities))
 }
