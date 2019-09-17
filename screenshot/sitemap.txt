@@ -1,4 +1,4 @@
-// package main
+// package SiteMap
 
 // import (
 // 	"encoding/json"
@@ -8,7 +8,7 @@
 // 	algorithmia "github.com/algorithmiaio/algorithmia-go"
 // )
 
-// func main() {
+// func sitemap() {
 // 	var apiKey = "sim5vLefek/igv1k9D05HTes1f51"
 
 // 	// Create the Algorithmia client object
