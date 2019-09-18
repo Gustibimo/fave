@@ -11,27 +11,46 @@ import (
 	extract "github.com/Gustibimo/fave"
 )
 
-// Companies is contain company names
-type Companies struct {
-	Name       string `json:"name"`
-	OutletsCnt int    `json:"outlets_count"`
+// Partners is contain company names
+type Partners struct {
+	Name      string  `json:"name"`
+	AvgRating float64 `json:"average_rating"`
 }
 
-// Outlets is contain information about partners
+// Outlets is contain data about outlet inc partner, address, discount,etc
 type Outlets struct {
-	Company Companies `json:"company"`
-	Slug    string    `json:"company_slug"`
-	Address string    `json:"address"`
-	Name    string    `json:"name"`
+	Partner    Partners `json:"partner"`
+	Address    string   `json:"address"`
+	Name       string   `json:"name"`
+	Lnt        float64  `json:"longitude"`
+	Lat        float64  `json:"latitude"`
+	FavePay    bool     `json:"has_fave_payment"`
+	FavePayCnt int      `json:"fave_payments_count"`
+	Favorited  int      `json:"favorited_count"`
 }
 
-// Merchants is output from api
-type Merchants struct {
-	Merch []Outlets `json:"outlets"`
-	Total int       `json:"total"`
+// Details is detail about partner
+type Details struct {
+	Name           string
+	PartnerAddress string
+	Rating         float64
+	FavePayCnt     int
+}
+
+// Data is output from api
+type Data struct {
+	Outlet []Outlets `json:"data"`
+	Total  string    `json:"page"`
+}
+
+func homeLink(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "FaveMerchant API!")
 }
 
 func main() {
+	// router := mux.NewRouter().StrictSlash(true)
+	// router.HandleFunc("/", homeLink)
+	// log.Fatal(http.ListenAndServe(":8087", router))
 
 	urlCity := "https://myfave.com/api/mobile/cities"
 
@@ -56,9 +75,10 @@ func main() {
 	// }
 	// fmt.Println(len(cities))
 
-	var partners []string
+	var partners []Partners
+	// result := make(map[string]Details)
 
-	urlAPI := "https://myfave.com/api/v1/search/partners?city="
+	urlAPI := "https://myfave.com/api/mobile/search/outlets?&limit=144&city="
 
 	spaceClient := http.Client{
 		Timeout: time.Second * 2, // Maximum of 2 secs
@@ -83,24 +103,24 @@ func main() {
 			log.Fatal(readErr)
 		}
 
-		var mr Merchants
-		json.Unmarshal([]byte(body), &mr)
+		var data Data
+		json.Unmarshal([]byte(body), &data)
 
-		for _, m := range mr.Merch {
-
-			// partners[m.Slug] = Outlets{m.Company, m.Slug, m.Address, m.Name}
-			partners = append(partners, m.Company.Name)
-			// fmt.Println(m.Company.Name)
-
+		for _, m := range data.Outlet {
+			// result[m.Partner.Name] = Details{m.Partner.Name, m.Address, m.Partner.AvgRating, m.FavePayCnt}
+			partners = append(partners, m.Partner)
 		}
-
-		// fmt.Println(partners)
-
+		// for _, m := range mr.Merch {
+		// 	partners = append(partners, m.Partner.Name)
+		// }
 		// if len(partners) != 0 {
 		// 	fmt.Println(partners[2])
 		// }
 	}
-	fmt.Println(len(removeDuplicates(partners)))
+	fmt.Println("--------Merchants found!---------")
+	// fmt.Println(result["Koffie Craft"])
+	fmt.Println(partners[:3])
+	// fmt.Println(removeDuplicates(partners))
 	// fmt.Println(mr.Total, len(mr.Merch), mr.Merch[0].Name)
 }
 
@@ -119,6 +139,5 @@ func removeDuplicates(elements []string) []string { // change string to int here
 			result = append(result, elements[v])
 		}
 	}
-	// Return the new slice.
 	return result
 }
