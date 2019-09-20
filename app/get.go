@@ -11,37 +11,9 @@ import (
 
 	extract "github.com/Gustibimo/fave"
 	"github.com/Gustibimo/fave/app/model"
-	"github.com/gorilla/mux"
 )
 
-func getMerchantByCity() {
-
-}
-
-func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "FaveMerchant API!")
-}
-
-func GetAllMerchants(w http.ResponseWriter, r *http.Request) {
-	urlCity := "https://myfave.com/api/mobile/cities"
-	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(GetMerchantsList(urlCity))
-}
-
-func GetOneMerchant(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusOK)
-	detailID := mux.Vars(r)["id"]
-	fmt.Fprintln(w, "Partner ID:", detailID)
-
-	// var det = Details{m.ID, m.Partner.Name, m.Address, m.Partner.AvgRating, m.FavePayCnt}
-	// for _, singleEvent := range det {
-	// 	if singleEvent.ID == eventID {
-	// 		json.NewEncoder(w).Encode(singleEvent)
-	// 	}
-	// }
-}
+var merchants []model.Details
 
 // GetMerchantsList is return map list of merchants
 func GetMerchantsList(urlCity string) []model.Details {
@@ -49,9 +21,10 @@ func GetMerchantsList(urlCity string) []model.Details {
 	var cities []string
 	cities = extract.GetCity(urlCity)
 
+	// cities := []string{"jakarta", "kuala-lumpur", "bali", "penang", "malacca"}
+
 	// result := make(map[string]model.Details)
 
-	var d []model.Details
 	urlAPI := "https://myfave.com/api/mobile/search/outlets?&limit=144&city="
 
 	spaceClient := http.Client{
@@ -82,21 +55,13 @@ func GetMerchantsList(urlCity string) []model.Details {
 		for _, m := range data.Outlet {
 			partnerName := strings.TrimLeft(m.Partner.Name, " ")
 			// result[city] = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
-			d = append(d, model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city})
+			merchants = append(merchants, model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city, m.Categories[0]})
 		}
 
 	}
 
-	return d
+	return merchants
 
-}
-
-func main() {
-	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", Index)
-	router.HandleFunc("/partners", GetAllMerchants).Methods("GET")
-	router.HandleFunc("/partners/{merchant_id}", GetOneMerchant).Methods("GET")
-	log.Fatal(http.ListenAndServe(":8081", router))
 }
 
 func removeDuplicates(elements []string) []string { // change string to int here if required

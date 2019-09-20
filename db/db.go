@@ -70,15 +70,15 @@ func main() {
 			// d = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
 
 			sqlStatement := `
-			INSERT INTO merchants (merchant_id, address, name, city, rating, fave_paycnt)
-			VALUES ($1, $2, $3, $4, $5, $6)
-			RETURNING id`
-			id := 0
-			err = db.QueryRow(sqlStatement, m.ID, m.Address, partnerName, city, m.Partner.AvgRating, m.FavePayCnt).Scan(&id)
+			INSERT INTO merchants (merchant_id, address, name, city, rating, fave_paycnt, category)
+			VALUES ($1, $2, $3, $4, $5, $6, $7)
+			RETURNING merchant_id`
+			merchant_id := 0
+			err = db.QueryRow(sqlStatement, m.ID, m.Address, partnerName, city, m.Partner.AvgRating, m.FavePayCnt, m.Categories[0]).Scan(&merchant_id)
 			if err != nil {
 				panic(err)
 			}
-			fmt.Println("New record ID is:", id)
+			fmt.Printf("new record for merchant ID: %d\n", merchant_id)
 		}
 
 	}
