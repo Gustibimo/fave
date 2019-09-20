@@ -44,12 +44,12 @@ func GetOneMerchant(w http.ResponseWriter, r *http.Request) {
 }
 
 // GetMerchantsList is return map list of merchants
-func GetMerchantsList(urlCity string) map[string]model.Details {
+func GetMerchantsList(urlCity string) []model.Details {
 	// // create slice for cities
 	var cities []string
 	cities = extract.GetCity(urlCity)
 
-	result := make(map[string]model.Details)
+	// result := make(map[string]model.Details)
 
 	var d []model.Details
 	urlAPI := "https://myfave.com/api/mobile/search/outlets?&limit=144&city="
@@ -81,15 +81,13 @@ func GetMerchantsList(urlCity string) map[string]model.Details {
 		json.Unmarshal([]byte(body), &data)
 		for _, m := range data.Outlet {
 			partnerName := strings.TrimLeft(m.Partner.Name, " ")
-			result[city] = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
-			d = append(d, Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city})
+			// result[city] = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
+			d = append(d, model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city})
 		}
 
 	}
-	// fmt.Println("--------Merchants found!---------")
-	// fmt.Printf("%T\n", result)
 
-	return result
+	return d
 
 }
 
@@ -98,7 +96,7 @@ func main() {
 	router.HandleFunc("/", Index)
 	router.HandleFunc("/partners", GetAllMerchants).Methods("GET")
 	router.HandleFunc("/partners/{merchant_id}", GetOneMerchant).Methods("GET")
-	log.Fatal(http.ListenAndServe(":8089", router))
+	log.Fatal(http.ListenAndServe(":8081", router))
 }
 
 func removeDuplicates(elements []string) []string { // change string to int here if required
