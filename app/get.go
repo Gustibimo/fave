@@ -82,7 +82,7 @@ func GetMerchantsList(urlCity string) []model.Details {
 		for _, m := range data.Outlet {
 			partnerName := strings.TrimLeft(m.Partner.Name, " ")
 			// result[city] = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
-			d = append(d, model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city})
+			d = append(d, model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city, m.Categories[0]})
 		}
 
 	}

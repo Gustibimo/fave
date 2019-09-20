@@ -8,4 +8,5 @@ type Details struct {
 	Rating     float64
 	FavePayCnt int
 	City       string
+	Category   string
 }

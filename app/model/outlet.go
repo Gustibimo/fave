@@ -12,4 +12,5 @@ type Outlets struct {
 	FavePay    bool     `json:"has_fave_payment"`
 	FavePayCnt int      `json:"fave_payments_count"`
 	Favorited  int      `json:"favorited_count"`
+	Categories []string `json:"category_names"`
 }
