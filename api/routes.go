@@ -42,25 +42,25 @@ var routes = Routes{
 	Route{
 		"Index",
 		"GET",
-		"/api",
+		"/v1/api",
 		Index,
 	},
 	Route{
 		"GetAllMerchants",
 		"GET",
-		"/api/merchants",
+		"/v1/api/merchant",
 		GetAllMerchants,
 	},
 	Route{
 		"GetOneMerchant",
 		"GET",
-		"/api/merchant/{id}",
+		"/v1/api/merchant/{id}",
 		GetOneMerchant,
 	},
 	Route{
 		"CreateMerchant",
 		"POST",
-		"/v1//api/merchant/",
+		"/v1/api/merchant/",
 		CreateMerchant,
 	},
 	Route{
@@ -72,7 +72,7 @@ var routes = Routes{
 	Route{
 		"UpdateMerchant",
 		"PUT",
-		"/v1/api/partners/{id}",
+		"/v1/api/merchant/{id}",
 		UpdateMerchant,
 	},
 }
