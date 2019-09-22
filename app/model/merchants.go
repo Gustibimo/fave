@@ -1,7 +1,7 @@
 package model
 
 // Details is detail about partner
-type Details struct {
+type Merchants struct {
 	ID         int     `json:"ID"`
 	Name       string  `json:"Name"`
 	Address    string  `json:"Address"`

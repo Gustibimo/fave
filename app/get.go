@@ -13,10 +13,10 @@ import (
 	"github.com/Gustibimo/fave/app/model"
 )
 
-var merchants []model.Details
+var merchants []model.Merchants
 
 // GetMerchantsList is return map list of merchants
-func GetMerchantsList(urlCity string) []model.Details {
+func GetMerchantsList(urlCity string) []model.Merchants {
 	// // create slice for cities
 	var cities []string
 	cities = extract.GetCity(urlCity)
@@ -55,7 +55,7 @@ func GetMerchantsList(urlCity string) []model.Details {
 		for _, m := range data.Outlet {
 			partnerName := strings.TrimLeft(m.Partner.Name, " ")
 			// result[city] = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
-			merchants = append(merchants, model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city, m.Categories[0]})
+			merchants = append(merchants, model.Merchants{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city, m.Categories[0]})
 		}
 
 	}

@@ -57,4 +57,22 @@ var routes = Routes{
 		"/api/merchant/{id}",
 		GetOneMerchant,
 	},
+	Route{
+		"CreateMerchant",
+		"POST",
+		"/api/merchant/",
+		CreateMerchant,
+	},
+	Route{
+		"DeleteMerchant",
+		"DELETE",
+		"/api/merchant/{id}",
+		DeleteMerchant,
+	},
+	Route{
+		"UpdateMerchant",
+		"PUT",
+		"/api/merchant/{id}",
+		UpdateMerchant,
+	},
 }
