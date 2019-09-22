@@ -15,11 +15,6 @@ type Cities struct {
 	Slug    string `json:"slug"`
 }
 
-// func main() {
-// 	url_city := "https://myfave.com/api/mobile/cities"
-// 	fmt.Println(extractCity(url_city))
-// }
-
 // GetCity is func to extract city
 func GetCity(urlCity string) []string {
 
@@ -51,6 +46,5 @@ func GetCity(urlCity string) []string {
 	for _, city := range cities {
 		cityList = append(cityList, city.Slug)
 	}
-	// fmt.Println(cityList)
 	return cityList
 }

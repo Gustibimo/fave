@@ -11,7 +11,7 @@ import (
 	"time"
 
 	extract "github.com/Gustibimo/fave"
-	"github.com/Gustibimo/fave/app/model"
+	"github.com/Gustibimo/fave/api/model"
 	_ "github.com/lib/pq"
 )
 
@@ -38,10 +38,10 @@ func main() {
 	cities = extract.GetCity(urlCity)
 
 	// var d model.Details
-	urlAPI := "https://myfave.com/api/mobile/search/outlets?&limit=144&city="
+	urlAPI := "https://myfave.com/api/mobile/search/outlets?&limit=100&city="
 
 	spaceClient := http.Client{
-		Timeout: time.Second * 10, // Maximum of 2 secs
+		Timeout: time.Second * 5, // Maximum of 2 secs
 	}
 
 	for _, city := range cities {
@@ -67,14 +67,14 @@ func main() {
 		json.Unmarshal([]byte(body), &data)
 		for _, m := range data.Outlet {
 			partnerName := strings.TrimLeft(m.Partner.Name, " ")
-			// d = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city}
+			// d = model.Details{m.ID, partnerName, m.Address, m.Partner.AvgRating, m.FavePayCnt, city, m.Partner.logo}
 
 			sqlStatement := `
-			INSERT INTO merchants (merchant_id, address, name, city, rating, fave_paycnt, category)
-			VALUES ($1, $2, $3, $4, $5, $6, $7)
+			INSERT INTO merchants (merchant_id, address, name, city, rating, fave_paycnt, category, logo)
+			VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
 			RETURNING merchant_id`
 			merchant_id := 0
-			err = db.QueryRow(sqlStatement, m.ID, m.Address, partnerName, city, m.Partner.AvgRating, m.FavePayCnt, m.Categories[0]).Scan(&merchant_id)
+			err = db.QueryRow(sqlStatement, m.ID, m.Address, partnerName, city, m.Partner.AvgRating, m.FavePayCnt, m.Categories[0], m.Partner.Logo).Scan(&merchant_id)
 			if err != nil {
 				panic(err)
 			}

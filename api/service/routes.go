@@ -1,4 +1,4 @@
-package main
+package service
 
 import (
 	"net/http"
@@ -42,19 +42,37 @@ var routes = Routes{
 	Route{
 		"Index",
 		"GET",
-		"/api",
+		"/v1/api",
 		Index,
 	},
 	Route{
 		"GetAllMerchants",
 		"GET",
-		"/api/partners",
+		"/v1/api/merchant",
 		GetAllMerchants,
 	},
 	Route{
 		"GetOneMerchant",
 		"GET",
-		"/api/partners/{id}",
+		"/v1/api/merchant/{id}",
 		GetOneMerchant,
+	},
+	Route{
+		"CreateMerchant",
+		"POST",
+		"/v1/api/merchant/",
+		CreateMerchant,
+	},
+	Route{
+		"DeleteMerchant",
+		"DELETE",
+		"/v1/api/merchant/{id}",
+		DeleteMerchant,
+	},
+	Route{
+		"UpdateMerchant",
+		"PUT",
+		"/v1/api/partners/{id}",
+		UpdateMerchant,
 	},
 }

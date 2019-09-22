@@ -1,0 +1,17 @@
+{
+  "debug": true,
+  "server": {
+    "address": ":9000"
+  },
+  "context":{
+    "timeout":2
+  },
+  "database": {
+      "host": "mysql",
+      "port": "3306",
+      "user": "bimo",
+      "pass": "0341",
+      "name": "fave_merchant"
+  }
+
+}
