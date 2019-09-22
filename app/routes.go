@@ -48,13 +48,13 @@ var routes = Routes{
 	Route{
 		"GetAllMerchants",
 		"GET",
-		"/api/partners",
+		"/api/merchant",
 		GetAllMerchants,
 	},
 	Route{
 		"GetOneMerchant",
 		"GET",
-		"/api/partners/{id}",
+		"/api/merchant/{id}",
 		GetOneMerchant,
 	},
 }
